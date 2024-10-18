@@ -37,6 +37,11 @@
     <script>
         const form = document.getElementById('form')
         let allUsers = localStorage.getItem("users")
+        const isLoggedIn = localStorage.getItem("user")
+
+        if(isLoggedIn) {
+            window.location.href = "/"
+        }
         allUsers = allUsers ? JSON.parse(allUsers) : []
 
         form.addEventListener('submit', e => {

@@ -30,6 +30,11 @@
         crossorigin="anonymous"></script>
 
     <script>
+        const isLoggedIn = localStorage.getItem("user")
+
+        if(isLoggedIn) {
+            window.location.href = "/"
+        }
         const form = document.getElementById('form');
 
         let allUsers = localStorage.getItem("users")
