@@ -64,7 +64,7 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li><a class="dropdown-item" href="#" id="sign_out">Sign out</a></li>
                 </ul>
             </div>
         </div>
@@ -111,7 +111,8 @@
                                     <p class="card-text">Join the best minds in tech to explore the future of technology
                                         and
                                         innovation.</p>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary">Register</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                        class="btn btn-primary">Register</a>
                                     <a href="#" class="btn btn-danger">Decline</a>
                                 </div>
                             </div>
@@ -125,7 +126,8 @@
                                     <p class="card-text">Dive deep into the latest marketing strategies with industry
                                         leaders.</p>
                                     <a href="#" class="btn btn-primary">RSVP</a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-warning">Reschedule</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                        class="btn btn-warning">Reschedule</a>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +139,8 @@
                                     <h5 class="card-title">Startup Expo 2024</h5>
                                     <p class="card-text">Network with startups and investors to kickstart your next big
                                         venture.</p>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary">Register</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                        class="btn btn-primary">Register</a>
                                     <a href="#" class="btn btn-danger">Decline</a>
                                 </div>
                             </div>
@@ -201,11 +204,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Select Date</label>
+                        <input type="datetime-local" class="form-control form-control-date" id="exampleInputPassword1">
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
@@ -219,6 +225,11 @@
         const user = localStorage.getItem("user");
 
         if (!user) window.location.href = "/auth.html";
+
+        document.getElementById('sign_out').addEventListener('click', () => {
+            localStorage.removeItem('user');
+            window.location.href = "/auth.html";
+        })
     </script>
 </body>
 
